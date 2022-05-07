@@ -11,7 +11,7 @@ module BRAM(
     input  [15:0] addr_ai,
     input  [15:0] addr_bi,
     output [31:0] dout_ao,
-    output [31:0] dout_bo,
+    output [31:0] dout_bo
 );
 
 RAMB36E1 #(
