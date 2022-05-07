@@ -1,12 +1,12 @@
 module BRAM(
     input         clk_ai,
     input         clk_bi,
-    input         ren_ani,  // read enable
-    input         ren_bni,
+    input         en_ai,  // read enable
+    input         en_bi,
     input         rst_ai,
     input         rst_bi,
-    input  [3:0]  wen_ani,  // write enable
-    input  [3:0]  wen_bni,
+    input  [3:0]  we_ai,  // write enable
+    input  [3:0]  we_bi,
     input  [31:0] din_ai,
     input  [31:0] din_bi,
     input  [14:0] addr_ai,
@@ -225,11 +225,11 @@ RAMB36E1 #(
     // when RAM_MODE="SDP")
     .ADDRARDADDR(addr_ai), // 16-bit input: A port address/Read address
     .CLKARDCLK(clk_ai), // 1-bit input: A port clock/Read clock
-    .ENARDEN(~en_ani), // 1-bit input: A port enable/Read enable
-    .REGCEAREGCE(~en_ani), // 1-bit input: A port register enable/Register enable
+    .ENARDEN(en_ai), // 1-bit input: A port enable/Read enable
+    .REGCEAREGCE(en_ai), // 1-bit input: A port register enable/Register enable
     .RSTRAMARSTRAM(rst_ai), // 1-bit input: A port set/reset
     .RSTREGARSTREG(rst_ai), // 1-bit input: A port register set/reset
-    .WEA(~we_ani), // 4-bit input: A port write enable
+    .WEA(we_ai), // 4-bit input: A port write enable
     // Port A Data: 32-bit (each) input: Port A data
     .DIADI(din_ai), // 32-bit input: A port data/LSB data
     .DIPADIP(), // 4-bit input: A port parity/LSB parity
@@ -237,11 +237,11 @@ RAMB36E1 #(
     // when RAM_MODE="SDP")
     .ADDRBWRADDR(addr_bi), // 16-bit input: B port address/Write address
     .CLKBWRCLK(clk_bi), // 1-bit input: B port clock/Write clock
-    .ENBWREN(~en_bni), // 1-bit input: B port enable/Write enable
-    .REGCEB(~en_bni), // 1-bit input: B port register enable
+    .ENBWREN(en_bi), // 1-bit input: B port enable/Write enable
+    .REGCEB(en_bi), // 1-bit input: B port register enable
     .RSTRAMB(rst_bi), // 1-bit input: B port set/reset
     .RSTREGB(rst_bi), // 1-bit input: B port register set/reset
-    .WEBWE(~we_bni), // 8-bit input: B port write enable/Write enable
+    .WEBWE(we_bi), // 8-bit input: B port write enable/Write enable
     // Port B Data: 32-bit (each) input: Port B data
     .DIBDI(din_bi), // 32-bit input: B port data/MSB data
     .DIPBDIP() // 4-bit input: B port parity/MSB parity
