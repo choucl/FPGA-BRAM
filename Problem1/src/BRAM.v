@@ -3,14 +3,14 @@ module BRAM(
     input         clk_bi,
     input         ren_ani,  // read enable
     input         ren_bni,
-    input         wen_ani,  // write enable
-    input         wen_bni,
     input         rst_ai,
     input         rst_bi,
+    input  [3:0]  wen_ani,  // write enable
+    input  [3:0]  wen_bni,
     input  [31:0] din_ai,
     input  [31:0] din_bi,
-    input  [15:0] addr_ai,
-    input  [15:0] addr_bi,
+    input  [14:0] addr_ai,
+    input  [14:0] addr_bi,
     output [31:0] dout_ao,
     output [31:0] dout_bo
 );
