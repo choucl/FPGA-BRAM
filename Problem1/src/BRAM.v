@@ -224,11 +224,11 @@ RAMB36E1 #(
     // when RAM_MODE="SDP")
     .ADDRARDADDR(addr_ai), // 16-bit input: A port address/Read address
     .CLKARDCLK(clk_i), // 1-bit input: A port clock/Read clock
-    .ENARDEN(~ren_ai), // 1-bit input: A port enable/Read enable
-    .REGCEAREGCE(~ren_ai), // 1-bit input: A port register enable/Register enable
+    .ENARDEN(~ren_ani), // 1-bit input: A port enable/Read enable
+    .REGCEAREGCE(~ren_ani), // 1-bit input: A port register enable/Register enable
     .RSTRAMARSTRAM(rst_ai), // 1-bit input: A port set/reset
-    .RSTREGARSTREG(), // 1-bit input: A port register set/reset
-    .WEA(~wen_ai), // 4-bit input: A port write enable
+    .RSTREGARSTREG(rst_ai), // 1-bit input: A port register set/reset
+    .WEA(~wen_ani), // 4-bit input: A port write enable
     // Port A Data: 32-bit (each) input: Port A data
     .DIADI(din_ai), // 32-bit input: A port data/LSB data
     .DIPADIP(), // 4-bit input: A port parity/LSB parity
@@ -236,11 +236,11 @@ RAMB36E1 #(
     // when RAM_MODE="SDP")
     .ADDRBWRADDR(addr_bi), // 16-bit input: B port address/Write address
     .CLKBWRCLK(clk_i), // 1-bit input: B port clock/Write clock
-    .ENBWREN(~ren_bi), // 1-bit input: B port enable/Write enable
-    .REGCEB(~ren_bi), // 1-bit input: B port register enable
+    .ENBWREN(~ren_bni), // 1-bit input: B port enable/Write enable
+    .REGCEB(~ren_bni), // 1-bit input: B port register enable
     .RSTRAMB(rst_bi), // 1-bit input: B port set/reset
-    .RSTREGB(), // 1-bit input: B port register set/reset
-    .WEBWE(~wen_bi), // 8-bit input: B port write enable/Write enable
+    .RSTREGB(rst_ai), // 1-bit input: B port register set/reset
+    .WEBWE(~wen_bni), // 8-bit input: B port write enable/Write enable
     // Port B Data: 32-bit (each) input: Port B data
     .DIBDI(din_bi), // 32-bit input: B port data/MSB data
     .DIPBDIP() // 4-bit input: B port parity/MSB parity
