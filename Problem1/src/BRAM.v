@@ -223,7 +223,7 @@ RAMB36E1 #(
     .INJECTSBITERR(), // 1-bit input: Inject a single bit error
     // Port A Address/Control Signals: 16-bit (each) input: Port A address and control signals (read port
     // when RAM_MODE="SDP")
-    .ADDRARDADDR(addr_ai), // 16-bit input: A port address/Read address
+    .ADDRARDADDR({addr_ai, 1'b0}), // 16-bit input: A port address/Read address
     .CLKARDCLK(clk_ai), // 1-bit input: A port clock/Read clock
     .ENARDEN(en_ai), // 1-bit input: A port enable/Read enable
     .REGCEAREGCE(en_ai), // 1-bit input: A port register enable/Register enable
@@ -235,7 +235,7 @@ RAMB36E1 #(
     .DIPADIP(), // 4-bit input: A port parity/LSB parity
     // Port B Address/Control Signals: 16-bit (each) input: Port B address and control signals (write port
     // when RAM_MODE="SDP")
-    .ADDRBWRADDR(addr_bi), // 16-bit input: B port address/Write address
+    .ADDRBWRADDR({addr_bi, 1'b0}), // 16-bit input: B port address/Write address
     .CLKBWRCLK(clk_bi), // 1-bit input: B port clock/Write clock
     .ENBWREN(en_bi), // 1-bit input: B port enable/Write enable
     .REGCEB(en_bi), // 1-bit input: B port register enable
