@@ -1,0 +1,7 @@
+/*bram_4k*/
+the_ROM_image:
+{
+  [bootloader]<bram_4k/boot/fsbl.elf>
+   <bitstream> 
+  <elf,ps7_cortexa9_0>
+}
