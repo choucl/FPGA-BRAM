@@ -8,7 +8,19 @@
 
 ## Problem 1
 
+![schematic](images/schematic.png)
 
+Use the AXI bus to combine the ZYNQ processor and AXI BRAM controller, and the BRAM controller is connected to our BRAM IP. 
+
+| Param          | Setting |
+| -------------- | ------- |
+| `RAM_MODE`	| `"TDP"` |
+| `READ_WIDTH_A` | `36`    |
+| `READ_WIDTH_B` | `36`    |
+| `WRITE_WIDTH_A` | `36`    |
+| `WRITE_WIDTH_B` | `36`    |
+| `WRITE_MODE_A` | `"TDP"` |
+| `WRITE_MODE_B` | `"TDP"` |
 
 ## Problem
 
