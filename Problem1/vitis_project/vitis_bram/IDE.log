@@ -1,0 +1,61 @@
+12:51:33 INFO  : Launching XSCT server: xsct.bat -n  -interactive C:\Users\clc25\Vivado_project\vitis_bram\temp_xsdb_launch_script.tcl
+12:51:35 INFO  : Registering command handlers for Vitis TCF services
+12:51:40 INFO  : XSCT server has started successfully.
+12:51:40 INFO  : plnx-install-location is set to ''
+12:51:49 INFO  : Successfully done setting XSCT server connection channel  
+12:51:49 INFO  : Successfully done query RDI_DATADIR 
+12:51:49 INFO  : Successfully done setting workspace for the tool. 
+12:51:49 INFO  : Platform repository initialization has completed.
+12:54:38 INFO  : Result from executing command 'getProjects': bram_4k
+12:54:38 INFO  : Result from executing command 'getPlatforms': 
+12:54:38 WARN  : An unexpected exception occurred in the module 'platform project logging'
+12:54:39 INFO  : Platform 'bram_4k' is added to custom repositories.
+12:54:54 INFO  : Platform 'bram_4k' is added to custom repositories.
+12:55:44 INFO  : Result from executing command 'getProjects': bram_4k
+12:55:44 INFO  : Result from executing command 'getPlatforms': bram_4k|C:/Users/clc25/Vivado_project/vitis_bram/bram_4k/export/bram_4k/bram_4k.xpfm
+12:55:44 INFO  : Checking for BSP changes to sync application flags for project 'bram'...
+12:56:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+12:56:02 INFO  : Jtag cable 'Xilinx TUL 1234-tulA' is selected.
+12:56:02 INFO  : 'jtag frequency' command is executed.
+12:56:02 INFO  : Context for 'APU' is selected.
+12:56:02 INFO  : System reset is completed.
+12:56:05 INFO  : 'after 3000' command is executed.
+12:56:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}' command is executed.
+12:56:08 INFO  : Device configured successfully with "C:/Users/clc25/Vivado_project/vitis_bram/bram/_ide/bitstream/bram_4k.bit"
+12:56:08 INFO  : Context for 'APU' is selected.
+12:56:08 INFO  : Hardware design and registers information is loaded from 'C:/Users/clc25/Vivado_project/vitis_bram/bram_4k/export/bram_4k/hw/bram_4k.xsa'.
+12:56:08 INFO  : 'configparams force-mem-access 1' command is executed.
+12:56:08 INFO  : Context for 'APU' is selected.
+12:56:08 INFO  : Sourcing of 'C:/Users/clc25/Vivado_project/vitis_bram/bram/_ide/psinit/ps7_init.tcl' is done.
+12:56:09 INFO  : 'ps7_init' command is executed.
+12:56:09 INFO  : 'ps7_post_config' command is executed.
+12:56:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:56:09 INFO  : The application 'C:/Users/clc25/Vivado_project/vitis_bram/bram/Debug/bram.elf' is downloaded to processor 'ps7_cortexa9_0'.
+12:56:09 INFO  : 'configparams force-mem-access 0' command is executed.
+12:56:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx TUL 1234-tulA" && level==0 && jtag_device_ctx=="jsn-TUL-1234-tulA-23727093-0"}
+fpga -file C:/Users/clc25/Vivado_project/vitis_bram/bram/_ide/bitstream/bram_4k.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw C:/Users/clc25/Vivado_project/vitis_bram/bram_4k/export/bram_4k/hw/bram_4k.xsa -mem-ranges [list {0x40000000 0xbfffffff}] -regs
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source C:/Users/clc25/Vivado_project/vitis_bram/bram/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow C:/Users/clc25/Vivado_project/vitis_bram/bram/Debug/bram.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+12:56:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+12:56:09 INFO  : 'con' command is executed.
+12:56:09 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+12:56:09 INFO  : Disconnected from the channel tcfchan#2.

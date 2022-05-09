@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="bram" location="C:/Users/clc25/Vivado_project/vitis_bram/bram" platform="C:/Users/clc25/Vivado_project/vitis_bram/bram_4k/export/bram_4k/bram_4k.xpfm" platformUID="xilinx:pynq-z2::0.0(custom)" systemProject="bram_system" sysConfig="bram_4k" runtime="cpp" cpu="standalone_ps7_cortexa9_0" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="60b052a4e6119cf41c9a4a2abcbba75f">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.832286113">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.1113054778" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="empty_application"/>
+</sdkproject:SdkProject>
